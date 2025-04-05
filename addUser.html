@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add User</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js"></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/pristinejs@latest/dist/pristine.min.js"></script>
+  </head>
+  <body class="w-full h-screen flex">
+    <div id="side-bar" class="w-[17%] h-full border-r border-gray-200">
+      <div
+        id="hs-sidebar-basic-usage"
+        class="hs-overlay [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 w-64 hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform h-full hidden fixed top-0 start-0 bottom-0 z-60 bg-white"
+        role="dialog"
+        tabindex="-1"
+        aria-label="Sidebar"
+      >
+        <div class="relative flex flex-col h-full max-h-full">
+          <!-- Header -->
+          <header class="p-4 flex justify-between items-center gap-x-2">
+            <a
+              class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80"
+              href="#"
+              aria-label="ERP"
+              >ERP</a
+            >
+
+            <div class="lg:hidden -me-2">
+              <!-- Close Button -->
+              <button
+                type="button"
+                class="flex justify-center items-center gap-x-3 size-6 bg-white border border-gray-200 text-sm text-gray-600 hover:bg-gray-100 rounded-full disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100"
+                data-hs-overlay="#hs-sidebar-basic-usage"
+              >
+                <svg
+                  class="shrink-0 size-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+                <span class="sr-only">Close</span>
+              </button>
+              <!-- End Close Button -->
+            </div>
+          </header>
+          <!-- End Header -->
+
+          <!-- Body -->
+          <nav
+            class="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300"
+          >
+            <div class="pb-0 px-2 w-full flex flex-col flex-wrap">
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-blue-500 focus:text-white"
+                    href="#"
+                  >
+                    <svg
+                      class="size-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                      />
+                      <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                    Dashboard
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="w-full active flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-blue-500 focus:text-white"
+                    href="index.html"
+                  >
+                    <svg
+                      class="size-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    Users
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-blue-500 focus:text-white"
+                    href="#"
+                  >
+                    <svg
+                      class="size-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    Routes
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-blue-500 focus:text-white"
+                    href="#"
+                  >
+                    <svg
+                      class="size-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                    Entity
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-blue-500 focus:text-white"
+                    href="#"
+                  >
+                    <svg
+                      class="size-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                    Employees
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-blue-500 focus:text-white"
+                    href="#"
+                  >
+                    <svg
+                      class="size-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                    Attendance
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- End Body -->
+        </div>
+      </div>
+    </div>
+    <div id="main-content" class="w-[80%] h-full">
+      <div id="top-navBar">
+        <div class="border-b-2 border-gray-200">
+          <nav class="-mb-0.5 flex justify-end space-x-6">
+            <a
+              class="py-4 px-1 inline-flex items-center gap-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 focus:outline-hidden focus:text-blue-600"
+              href="#"
+            >
+              <svg
+                class="w-6 h-6 text-gray-800"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="#b4b8b5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.292-.538 1.292H5.538C5 18 5 17.301 5 16.708c0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365ZM8.733 18c.094.852.306 1.54.944 2.112a3.48 3.48 0 0 0 4.646 0c.638-.572 1.236-1.26 1.33-2.112h-6.92Z"
+                />
+              </svg>
+            </a>
+            <a
+              class="py-4 px-1 inline-flex items-center gap-2 border-b-2 border-blue-500 text-sm font-medium whitespace-nowrap text-blue-600 focus:outline-hidden focus:text-blue-800"
+              href="#"
+              aria-current="page"
+            >
+              <svg
+                class="w-6 h-6 text-gray-800"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="#b4b8b5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"
+                />
+              </svg>
+            </a>
+            <a
+              class="py-4 px-1 inline-flex items-center gap-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 focus:outline-hidden focus:text-blue-600"
+              href="#"
+            >
+              <svg
+                class="w-6 h-6 text-gray-800"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="#b4b8b5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div id="heading" class="border-b border-gray-200">
+        <header
+          class="flex flex-wrap sm:justify-start items-center sm:flex-nowrap w-full bg-white text-sm py-3"
+        >
+          <a href="index.html">
+            <svg
+              class="w-6 h-6 text-gray-800 px-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m15 19-7-7 7-7"
+              />
+            </svg>
+          </a>
+          <div class="h-6 w-[1px] bg-gray-300 mx-2"></div>
+          <nav
+            class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
+          >
+            <div
+              class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80"
+            >
+              Add Users
+            </div>
+          </nav>
+        </header>
+      </div>
+      <div id="form" class="p-8">
+        <div class="bg-white p-6 rounded-lg shadow-md max-w-4xl">
+          <!-- Heading -->
+          <h2 class="text-xl font-semibold">Profile</h2>
+          <p class="text-sm text-gray-400 my-4 font-medium">
+            Manage your name, password and account settings.
+          </p>
+
+          <!-- Form -->
+          <form>
+            <!-- Full Name -->
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center">
+                <label class="block text-md font-medium text-gray-500"
+                  >Full Name</label
+                >
+              </div>
+              <div class="space-y-3">
+                <div>
+                  <div class="sm:flex rounded-lg wrapper">
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      name="fName"
+                      class="border py-2.5 sm:py-3 px-4 pe-11 block w-full border-gray-200 sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg sm:text-sm relative focus:z-10 focus:border-gray-500 focus:outline-none disabled:opacity-50 disabled:pointer-events-none placeholder:font-medium"
+                    />
+
+                    <input
+                      type="text"
+                      placeholder="Last Name"
+                      name="lName"
+                      class="border py-2.5 sm:py-3 px-4 pe-11 block w-full border-gray-200 -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg sm:text-sm relative focus:z-10 focus:border-gray-500 focus:outline-none disabled:opacity-50 disabled:pointer-events-none placeholder:font-medium"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role -->
+            <div class="mt-4">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="flex items-center">
+                  <label class="block text-md font-medium text-gray-500"
+                    >Role</label
+                  >
+                </div>
+                <div class="space-y-3">
+                  <div>
+                    <div class="relative w-full">
+                      <select
+                        name="role"
+                        class="appearance-none mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none pr-10"
+                      >
+                        <option value="select-role">Select Role</option>
+                        <option value="role-1">Role-1</option>
+                        <option value="role-2">Role-2</option>
+                        <option value="role-3">Role-3</option>
+                      </select>
+
+                      <!-- Custom Arrow Icon -->
+                      <div
+                        class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500"
+                      >
+                        <svg
+                          class="w-6 h-6 text-gray-400 dark:text-white"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="#6b7280"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="m8 15 4 4 4-4m0-6-4-4-4 4"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mt-4">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="flex items-center">
+                  <label class="block text-md font-medium text-gray-500"
+                    >Email Address</label
+                  >
+                </div>
+                <div class="space-y-3">
+                  <div>
+                    <div class="sm:flex rounded-lg">
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Enter Email"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none placeholder:font-medium"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile -->
+            <div class="mt-4">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="flex items-center">
+                  <label class="block text-md font-medium text-gray-500"
+                    >Mobile Number</label
+                  >
+                </div>
+                <div class="space-y-3">
+                  <div class="space-y-3">
+                    <div class="flex rounded-lg">
+                      <input
+                        id="phone"
+                        type="tel"
+                        name="phone"
+                        class="border py-1.5 sm:py-2 px-3 pe-11 block w-full border-gray-200 rounded-lg sm:text-sm focus:z-10 focus:border-gray-500 focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mt-4">
+              <div class="grid grid-cols-2 gap-4">
+                <!-- Password Label -->
+                <div class="flex">
+                  <label class="block text-md font-medium text-gray-500"
+                    >Password</label
+                  >
+                </div>
+
+                <!-- Password Inputs -->
+                <div class="space-y-3">
+                  <div class="rounded-lg">
+                    <div class="relative w-full">
+                      <input
+                        type="password"
+                        placeholder="Enter password"
+                        name="password"
+                        id="password"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none placeholder:font-medium"
+                      />
+                    </div>
+                    <div class="relative w-full">
+                      <input
+                        type="password"
+                        name="confirmPassword"
+                        id="confirmPassword"
+                        placeholder="Confirm password"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none placeholder:font-medium"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Toggle Switch -->
+            <div class="mt-4">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="flex items-center">
+                  <label class="block text-md font-medium text-gray-500"
+                    >Terms & Conditions</label
+                  >
+                </div>
+                <div class="space-y-3">
+                  <div>
+                    <div class="sm:flex rounded-lg">
+                      <label
+                        for="toggle"
+                        class="ml-2 relative inline-flex items-center cursor-pointer"
+                      >
+                        <input
+                          type="checkbox"
+                          id="toggle"
+                          name="toggle"
+                          class="sr-only peer"
+                        />
+                        <div
+                          class="w-11 h-6 bg-gray-200 peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-5 peer-checked:after:bg-white peer-checked:bg-blue-600 after:absolute after:top-0.5 after:left-[2px] after:bg-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"
+                        ></div>
+                      </label>
+                      <span class="ml-2 text-sm text-gray-400 font-medium"
+                        >Accept</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Save Button -->
+            <div class="mt-6 flex justify-end">
+              <button
+                type="submit"
+                class="px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="addUserScript.js" defer></script>
+</html>
